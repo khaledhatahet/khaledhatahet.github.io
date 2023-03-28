@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/youthinkSyriaFinalProject/static/css/main.e6c13ad2.css",
+    "main.js": "/youthinkSyriaFinalProject/static/js/main.42baab2c.js",
+    "static/js/787.f696853f.chunk.js": "/youthinkSyriaFinalProject/static/js/787.f696853f.chunk.js",
+    "index.html": "/youthinkSyriaFinalProject/index.html",
+    "main.e6c13ad2.css.map": "/youthinkSyriaFinalProject/static/css/main.e6c13ad2.css.map",
+    "main.42baab2c.js.map": "/youthinkSyriaFinalProject/static/js/main.42baab2c.js.map",
+    "787.f696853f.chunk.js.map": "/youthinkSyriaFinalProject/static/js/787.f696853f.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.e6c13ad2.css",
+    "static/js/main.42baab2c.js"
+  ]
+}
