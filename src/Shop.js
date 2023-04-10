@@ -2,7 +2,6 @@ import { useState , useEffect} from 'react';
 import {
   BrowserRouter as Routes, Switch ,Route, Link 
 } from "react-router-dom";
-//import ReactDOM from "react-dom";
 function Shop() { 
   const [data, setData] = useState([]);
   const [filter, setFilter] = useState(data);
@@ -89,7 +88,6 @@ function Shop() {
                         <div key={product.id} className="col-lg-3 col-12 col-md-4 col-sm-6 mb-5">
                         <div className="product">
                           <div className="product-wrap">
-                            {/* <a href="/product-single"> */}
                             <Link to={{ pathname: "/product/" + product.id }}>
                               <img
                                 class="card-img-top"
@@ -97,23 +95,12 @@ function Shop() {
                                 alt={product.title}
                                 height="350"
                               />
-                            {/* </a> */}
                             </Link>
                           </div>
-      
-                          {/* <div className="product-hover-overlay">
-                            <a href="#">
-                              <i className="tf-ion-android-cart"></i>
-                            </a>
-                            <a href="#">
-                              <i className="tf-ion-ios-heart"></i>
-                            </a>
-                          </div> */}
       
                           <div className="product-info">
                             <h2 className="product-title h5 mb-0">
                               <Link to={{ pathname: "/product/${product.id}"}}>{product.title.substring(0,25)}</Link>
-                              {/* {product.title} */}
                             </h2>
                             <span className="price">${product.price}</span>
                           </div>

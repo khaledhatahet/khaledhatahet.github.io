@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import ReactDOM from 'react-dom';
 import "jquery/dist/jquery.slim.min.js";
 import "popper.js/dist/umd/popper.min.js";
@@ -7,8 +7,9 @@ import {
     BrowserRouter as Routes, Switch ,Route, Link 
 } from "react-router-dom";
 import { useSelector } from 'react-redux';
+import { CartContext } from './redux/reducer/handleCart';
 function Header() {
-    const state = useSelector((state) => state.handleCart)
+    const {cart} = useContext(CartContext)
     let total = 0
     return (
         <nav  className="navbar navbar-expand-lg navbar-light bg-white w-100 navigation" id="navbar">
@@ -37,13 +38,13 @@ function Header() {
             <li  className="dropdown cart-nav dropdown-slide list-inline-item">
                 <div className="buttons">
                 <a href='#' className="btn btn-outline-dark dropdown-toggle cart-icon" data-toggle="dropdown" data-hover="dropdown">
-                   Cart ({state.length})
+                   Cart ({cart.length})
                 </a>
                 </div>
                
                 <div  className="dropdown-menu cart-dropdown">
                
-               {state.map((product) => {
+               {cart.map((product) => {
                 let subtotal = product.qty * product.price;
                 total += subtotal;
                 return(

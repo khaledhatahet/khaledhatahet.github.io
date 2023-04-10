@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import ReactDOM from 'react-dom';
 import { useSelector } from 'react-redux';
 import { useDispatch } from 'react-redux';
@@ -7,20 +7,15 @@ import {
     BrowserRouter as Routes, Switch ,Route, Link 
   } from "react-router-dom";
 import { addCart, delCart } from './redux/action';
+import { CartContext } from './redux/reducer/handleCart';
 function Cart() {
-
+    const {addProduct, cart} = useContext(CartContext)
     const dispatch = useDispatch();
 
-    const addProduct = (product) => {
-        dispatch(addCart(product))
-    }
     const delProduct = (product) => {
         dispatch(delCart(product))
     }
-
-    const products = useSelector((state) => state.handleCart)
     let total = 0
-    console.log(products);
 
     const mystyle = {
         color: "white",
@@ -76,7 +71,7 @@ function Cart() {
                                 </thead>
         
                                 <tbody>
-                                    {products.map((product) => {
+                                    {cart.map((product) => {
                                          let subtotal = product.qty * product.price;
                                          total += subtotal;
                                         return (

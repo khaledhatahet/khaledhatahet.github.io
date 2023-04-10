@@ -1,4 +1,4 @@
-import React , {useState, useEffect} from 'react';
+import React , {useState, useEffect, useContext} from 'react';
 import { useParams } from 'react-router';
 import ReactDOM from 'react-dom';
 import { useDispatch } from 'react-redux';
@@ -6,7 +6,9 @@ import { addCart } from './redux/action';
 import {
     BrowserRouter as Routes, Switch ,Route, Link 
 } from "react-router-dom";
+import { CartContext } from './redux/reducer/handleCart';
 function SingleProduct() {
+    const {addProduct} = useContext(CartContext)
 
     const {id} = useParams();
     console.log('https://fakestoreapi.com/products/' + id);
@@ -14,9 +16,6 @@ function SingleProduct() {
     const [loading , setLoading] = useState(false);
 
     const dispatch = useDispatch();
-    const addProduct = (product) => {
-        dispatch(addCart(product))
-    }
     useEffect(() => {
         const getProduct = async () => {
             setLoading(true)
